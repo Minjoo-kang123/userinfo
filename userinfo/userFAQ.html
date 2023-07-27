@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+
+<body>
+    <div class = "header">
+        <table style="width: 500px; height: 50px; margin-left: 20px; margin-bottom: 20px; border: 1px black solid; text-align: center;">
+            <tr>
+                <td>
+                    <p><a href="userlogin.html"><p>로그인</p></a></p>
+                </td>
+                <td>
+                    <p><a href="userFAQ.html"><p>회원 FAQ</p></a></p>
+                </td>
+                <td>
+                    <p><a href="find_id.html"><p>아이디 찾기</p></a></p>
+                </td>
+                <td>
+                    <p><a href="find_pw.html"><p>비밀번호 찾기</p></a></p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            var accoNum = -1;//accoNum은 펼쳐져 있는 값
+            $("#accoDiv>li").each(function (q) {
+                $(this).find(".question").click(function () {
+                    if (q != accoNum) { //기존에 펼쳐져 있는 것을 접기 위함
+                        console.log(accoNum)
+                        console.log(this)
+                        $("#accoDiv>li").eq(accoNum).removeClass("on");
+                        $("#accoDiv>li").eq(accoNum).find(".question").next().stop(true, true).slideUp(300);
+                        $("#accoDiv>li").eq(accoNum).find(".question").find(".qbtn").find("img").attr("src", jQuery("#accoDiv>li").eq(accoNum).find(".question").find(".qbtn").find("img").attr("src").replace("_on.gif", ".gif"));
+                        $("#accoDiv>li").eq(accoNum).find(".question").find(".openbtn").find("img").attr("src", jQuery("#accoDiv>li").eq(accoNum).find(".question").find(".openbtn").find("img").attr("src").replace("_on.gif", ".gif"));
+                        
+                        accoNum = q;
+
+                        $(this).parent().addClass("on"); //선택한 요소를 펼치기 위해서 사용
+                        $(this).next().stop(true, true).slideDown(300);
+                        $(this).find(".qbtn").find("img").attr("src", jQuery(this).find(".qbtn").find("img").attr("src").replace(".gif", "_on.gif"));
+                        $(this).find(".openbtn").find("img").attr("src", jQuery(this).find(".openbtn").find("img").attr("src").replace(".gif", "_on.gif"));
+                    } else { //같은 거 눌러서 다 접혔을때
+                        $("#accoDiv>li").eq(accoNum).removeClass("on");
+                        $("#accoDiv>li").eq(accoNum).find(".question").next().stop(true, true).slideUp(300);
+                        $("#accoDiv>li").eq(accoNum).find(".question").find(".qbtn").find("img").attr("src", jQuery("#accoDiv>li").eq(accoNum).find(".question").find(".qbtn").find("img").attr("src").replace("_on.gif", ".gif"));
+                        $("#accoDiv>li").eq(accoNum).find(".question").find(".openbtn").find("img").attr("src", jQuery("#accoDiv>li").eq(accoNum).find(".question").find(".openbtn").find("img").attr("src").replace("_on.gif", ".gif"));
+                        accoNum = -1;
+                    }
+                })
+            })
+        })
+
+    </script>
+    <div class="content">
+        <h1>회원정보 FAQ</h1>
+        <div class="cbody">
+            <div class="list">
+                <ul id="accoDiv">
+                    <li>
+                        <div class="question">
+                            <p class="qbtn"><img src="image/icon_q.gif" alt="Q"></p>
+                            <p class="qtxt"><a href="javascript:">아이디 찾는 방법</a></p>
+                            <p class="openbtn"><img src="image/icon_plus.gif" alt="닫힘"></p>
+                        </div>
+                        <div class="answer" style="display: none;">
+                            <p><span><strong>아이디가 기억나지 않는다면, 로그인 화면 하단의 아이디 찾기를 통해 아이디를 확인할 수 있습니다.</strong></span></p>
+                            <br><p><span><strong>아이디 찾기</strong></span></p>
+                            <ul>
+                                <li style="margin-left: 20px;">
+                                    <p style="padding-bottom: 10px;"><span><strong>기업 회원의 경우</strong> 기업회원 > <strong>기업명, 사업자등록번호 기입 후</strong> 확인 클릭</span></p>
+                                </li>
+                                <li style="margin-left: 20px;">
+                                    <p style="padding-bottom: 10px;"><span><strong>개인 회원의 경우</strong> 개인회원 > <strong>이름, 이메일 기입 후</strong> 확인 클릭</span></p>
+                                </li>
+                            </ul>
+                            <p><span><strong>이후 가입시 메일로 회신된 ID 확인 </strong></span></p>
+                        </div>
+
+                    </li>
+                    
+                    <li>
+                        <div class="question">
+                            <p class="qbtn"><img src="image/icon_q.gif" alt="Q"></p>
+                            <p class="qtxt"><a href="javascript:">비밀번호 찾는 방법</a></p>
+                            <p class="openbtn"><img src="image/icon_plus.gif" alt="닫힘"></p>
+                        </div>
+                        <div class="answer" style="display: none;">
+                            <p><span><strong>비밀번호가 기억나지 않는다면, 로그인 화면 하단의 비밀번호 찾기를 통해 비밀번호를 확인할 수 있습니다.</strong></span></p>
+                            <br><p><span><strong>비밀번호 찾기</strong></span></p>
+                            <ul>
+                                <li style="margin-left: 20px;">
+                                    <p style="padding-bottom: 10px;"><span><strong>기업 회원의 경우</strong> 기업회원 > <strong>아이디, 기업명, 사업자등록번호 기입 후</strong> 확인 클릭</span></p>
+                                </li>
+                                <li style="margin-left: 20px;">
+                                    <p style="padding-bottom: 10px;"><span><strong>개인 회원의 경우</strong> 개인회원 > <strong>아이디, 이름, 이메일 기입 후</strong> 확인 클릭</span></p>
+                                </li>
+                            </ul>
+                            <p><span><strong>이후 가입시 메일로 회신된 임시 비밀번호 확인 </strong></span></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="question">
+                            <p class="qbtn"><img src="image/icon_q.gif" alt="Q"></p>
+                            <p class="qtxt"><a href="javascript:">성적서 조회가 불가한 경우</a></p>
+                            <p class="openbtn"><img src="image/icon_plus.gif" alt="닫힘"></p> 
+                        </div>
+                        <div class="answer" style="display: none;">
+                            <p><span>현 계정이 기업회원인지 개인회원이지 확인해주시길 바랍니다.</span></p>
+                            <p><span>기업에서 요청한 성적서의 경우 개인회원 아이디로 조회가 불가합니다.</span></p>
+                            <p><span>따라서 해당 아이디 확인 후 다시 조회하시길 바랍니다.</span></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="question">
+                            <p class="qbtn"><img src="image/icon_q.gif" alt="Q"></p>
+                            <p class="qtxt"><a href="javascript:">회사명을 변경하고 싶어요.</a></p>
+                            <p class="openbtn"><img src="image/icon_plus.gif" alt="닫힘"></p> 
+                        </div>
+                        <div class="answer" style="display: none;">
+                            <p><span><strong>회사명 변경은 회원 탈퇴 후 재가입을 통해 변경이 가능합니다.</strong></span></p>
+                            <p><span>사업자 번호가 변경되지 않은 경우, 회사명을 변경하지 않고 사용이 가능합니다.</span></p>
+                            <p><span>사업자 번호와 회사명 두가지 모두가 변경 된 경우에는</span></p>
+                            <p><span><strong>탈퇴 후 재가입으로 수정하셔야 합니다.</strong></span>&nbsp;</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="question">
+                            <p class="qbtn"><img src="image/icon_q.gif" alt="Q"></p>
+                            <p class="qtxt"><a href="javascript:">아이디/비밀번호 찾기 메일이 안와요</a></p>
+                            <p class="openbtn"><img src="image/icon_plus.gif" alt="닫힘"></p> 
+                        </div>
+                        <div class="answer" style="display: none;">
+                            <p><span><strong>아이디 비밀번호 찾기 후 메일이 오지 않는 경우 담당자의 메일이 변경되지 않았는지 확인해주세요.</strong></span></p>
+                            <p><span>담당자의 메일이 변경된 경우</span></p>
+                            <p><span>2. "호환성 보기 설정"</span></p>
+                            <p><span>3. 리스트에 "katri.re.kr" 추가</span></p>
+                            <p><span>4. 인터넷 전부 끄고 다시 시도합니다.</span>&nbsp;</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="question">
+                            <p class="qbtn"><img src="image/icon_q.gif" alt="Q"></p>
+                            <p class="qtxt"><a href="javascript:">담당자 이메일 변경/이메일 분실로 메일 확인이 불가합니다.</a></p>
+                            <p class="openbtn"><img src="image/icon_plus.gif" alt="닫힘"></p>
+                        </div>
+                        <div class="answer" style="display: none;">
+                            <p><span style="font-size: 10pt;">&nbsp;</span></p>
+                            <p><span>기존 아이디/비밀번호 찾기는</span></p>
+                            <p><span><strong>로그인 > 아이디 찾기 / 비밀번호 찾기 를 이용해 주시기 바랍니다.</strong></span></p>
+                            <p><span>다만 <strong>담당직원 퇴사 및 이동, 회원가입 시 등록한 이메일 정보 분실</strong> 등의 사유로</span></p>
+                            <p><span><strong>이메일 전송이 되지 않아</strong> 아이디 또는 패스워드 찾기가 어려운 경우 
+                                <span>아래의 절차를 수행하여 주시기 바랍니다.</span>
+                            </span></p>
+                            <p><span>&nbsp;</span></p>
+                            <p><span>1. 연구원 운영담당자에게 
+                                <span style="color: rgb(255, 0, 0);">이메일 변경 메일 발송(고객)</span>
+                            </span></p>
+                            <p><span>- 내용에 담당자 이메일 주소(계정) 기입</span></p>
+                            <p><span>- 사업자 등록증 사본첨부
+                                <span style="color: rgb(255, 0, 0);">(필수)</span>
+                            </span></p>
+                            <p><span>- 운영담당자 이메일 주소: <a href="mailto:system@katri.re.kr"><span style="color: rgb(58, 50, 195);">system@katri.re.kr</span></a></span></p>
+                            <p><span style="line-height: 1.8; font-size: 12pt;">&nbsp;</span></p>
+                            <p><span>2. 연구원 담당자가 처리 후 회신(연구원)</span></p>
+                            <p><span>- 회원가입 이메일 정보 변경</span></p>
+                            <p><span>- 아이디, 패스워드 찾기 방법 회신</span></p>
+                            <p><span style="line-height: 1.8; font-size: 12pt;">&nbsp;</span></p>
+                            <p><span>3. <span style="color: rgb(58, 50, 195);">메일 주소 변경 완료 회신 확인 후 ID/PW 찾기 진행(고객)</span></span></p>
+                            <p><span style="line-height: 1.8; font-size: 12pt;">&nbsp;</span></p><p><span>4. 변경된 메일을 통해 회신받은 아이디/임시 비밀번호로 로그인(고객)</span></p>
+                            <p><span style="line-height: 1.8; font-size: 12pt;">&nbsp;</span></p><p><span>감사합니다.</span></p>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;&nbsp;</p>
+                        </div>
+                        
+                    </li>
+                    <!--
+                    <li>
+                        <div class="question">
+                            <p class="qbtn"><img src="image/icon_q.gif" alt="Q"></p>
+                            <p class="qtxt"><a href="javascript:">온라인 신청시 승인확인 메세지가 뜨는 경우</a></p>
+                            <p class="openbtn"><img src="image/icon_plus.gif" alt="닫힘"></p> 
+                        </div>
+                        <div class="answer" style="display: none;">
+                            <p><span><strong>인터넷 익스플로러 사용 시</strong></span></p>
+                            <p><span>1. 우측 상단의 설정(톱니바퀴) 클릭</span></p>
+                            <p><span>2. "호환성 보기 설정"</span></p>
+                            <p><span>3. 리스트에 "katri.re.kr" 추가</span></p>
+                            <p><span>4. 인터넷 전부 끄고 다시 시도합니다.</span>&nbsp;</p>
+                        </div>
+                    </li>
+                    -->
+                </ul>
+            </div>
+            <div class = "paging">
+                <p><strong>1</strong></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+</html>

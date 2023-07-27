@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='c.css'>
+    <script src='main.js'></script>
+    <style>
+        .cen{
+            width:750px; 
+            height:40px; 
+            margin-top:20px;
+            padding: auto;
+            text-align: center;
+            background-color: rgb(205, 241, 255);
+        }
+
+    </style>
+</head>
+<body>
+    <div class = "header">
+        <table style="width: 500px; height: 50px; margin-left: 20px; margin-bottom: 20px; border: 1px black solid; text-align: center;">
+            <tr>
+                <td>
+                    <p><a href="userlogin.html"><p>로그인</p></a></p>
+                </td>
+                <td>
+                    <p><a href="userFAQ.html"><p>회원 FAQ</p></a></p>
+                </td>
+                <td>
+                    <p><a href="find_id.html"><p>아이디 찾기</p></a></p>
+                </td>
+                <td>
+                    <p><a href="find_pw.html"><p>비밀번호 찾기</p></a></p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            alert("요청하신 임시 비밀번호를 회원 정보의 메일로 전송했습니다. 메일함을 확인해주세요."); 
+        });
+    </script>
+    <div class="content" id="content">
+        <h2>비밀번호 찾기</h2>
+        <div class="conDiv">
+            <div class="grayBox3 mt35">가입시 요청하신 이메일을 확인해주세요.</div>
+                <div class="idSrchBox mt30">
+                    <form>
+                        <div class="left" style="width: 740px;">
+                            <p class="tit" style="margin-top: 100px;">임시비밀번호를 전송했습니다. <br> 메일함을 확인해주세요.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="cen">
+            <a href="userFAQ.html" target="_blank"><h3>회원정보 FAQ</h3></a>
+        </div>
+    </div>
+</body>
+</html>

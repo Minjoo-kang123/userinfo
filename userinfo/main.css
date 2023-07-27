@@ -1,0 +1,78 @@
+h1{ font-weight: strong;}
+.content{
+    width: 840px;
+    height: 764px;
+    margin: auto 0;
+    padding: 0;
+    float: left;
+}
+ul{
+    list-style:none;    
+}
+body, div, li, p, ul, ol{
+    margin : 0;
+    padding : 0; 
+}li {
+    overflow: hidden;
+    border-bottom: 1px solid #e5e5e5;
+    display: list-item;
+}
+a:hover {
+    font-weight: bold;
+}a{
+    color : black;
+    text-decoration-line: none;
+} .qbtn{
+    width: 67px;
+    float: left;
+    padding: 13px 0 11px;
+    text-align: center;
+} .openbtn{
+    width: 67px;
+    padding: 13px 0 11px;
+    float: right;
+    text-align: center;
+} .qtxt{
+    width: 614px;
+    float: left;
+    text-align: left;
+    line-height: 49px;
+} .answer{
+    border-top: 1px solid #e5e5e5;
+    background: #f8f9fb;
+    padding: 13px 29px 16px 66px;
+    letter-spacing: -0.5px;
+    line-height: 23px;
+    color: #444;
+}.list li .question{
+    overflow: hidden;
+    height: 50px;
+}
+.list{
+    float:left;
+    width: 840px;
+    border-top: 2px solid #3a7ab8;
+    height: inherit;
+    font-size: 10pt;
+    margin-bottom: 50px;
+}.cbody{
+    float:left;
+    padding-top: 40px;
+    border-top: 2px solid black;
+}span{
+    font-size: 10pt;
+}.paging {
+    text-align: center;
+    color: #666;
+}.paging p {
+    display: inline-block;
+    overflow: hidden;
+}.paging strong {
+    display: inline-block;
+    padding: 0 12px;
+    vertical-align: top;
+    line-height: 30px;
+    background: #3a7ab8;
+    color: #fff;
+    margin-left: 8px;
+}

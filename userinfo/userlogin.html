@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='c.css'>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript">
+        //포커스 변환
+        jQuery(document).ready(function () {
+            var userId = jQuery("#userId").val();
+            var userPw = jQuery("#userPw").val();
+
+            if (userId != "") {
+                jQuery(".txtId").find("label").css("display", "none");
+            }
+            if (userPw != "") {
+                jQuery(".txtPw").find("label").css("display", "none");
+            }
+
+            jQuery("#userId").focus(function () {
+                jQuery(".txtId").find("label").css("display", "none");
+            })
+            jQuery("#userPw").focus(function () {
+                jQuery(".txtPw").find("label").css("display", "none");
+            })
+        })
+
+        function goLogin() {
+        }
+    </script>
+</head>
+
+<body>
+    <div class = "header">
+        <table style="width: 500px; height: 50px; margin-left: 20px; margin-bottom: 20px; border: 1px black solid; text-align: center;">
+            <tr>
+                <td>
+                    <p><a href="userlogin.html"><p>로그인</p></a></p>
+                </td>
+                <td>
+                    <p><a href="userFAQ.html"><p>회원 FAQ</p></a></p>
+                </td>
+                <td>
+                    <p><a href="find_id.html"><p>아이디 찾기</p></a></p>
+                </td>
+                <td>
+                    <p><a href="find_pw.html"><p>비밀번호 찾기</p></a></p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="content" id="content"> <!-- 2015-05-11 안진용 id추가 -->
+        <h2>로그인</h2>
+        <form>
+            <div class="loginWrap mt35">
+                <p class="taC"><img src="image/txt_login1.gif" alt="한국의류시험연구원에 오신 것을 환영합니다"></p>
+                <div class="loginCon mt20">
+                    <div class="overF">
+                        <div class="left">
+                            <p class="txtId">
+                                <label for="userId">아이디</label>
+                                <input type="text" name="CUST_ID" value="" title="아이디 입력" class="txt" id="userId" maxlength="16" autocomplete="off">
+                            </p>
+                            <p class="txtPw mt5">
+                                <label for="userPw">비밀번호</label>
+                                <input type="password" name="CUST_PW" value="" title="비밀번호 입력" class="txt" id="userPw"  maxlength="12" autocomplete="off">
+                            </p>
+                            <p class="mt15">
+                                <input type="checkbox" name="saveId" value="Y" title="" class="checkbox" id="userSave">
+                                <label for="userSave">아이디 저장</label>
+                            </p>
+                        </div>
+                        <p class="loginBt"><a href="FAQ.html"><img
+                                    src="image/btn_login2.gif" alt="로그인"></a></p>
+                    </div>
+                    <div class="bts mt20">
+                        <a href="find_id.html"><img src="image/btn_login_id.gif"  alt="아이디 찾기"></a>
+                        <a href="find_pw.html"><img src="image/btn_login_pw.gif" alt="비밀번호 찾기"></a>
+                        <a href=" "><img src="image/btn_login_join.gif" alt="회원가입"></a>
+                    </div>
+                </div>
+                <div class="cen">
+                    <a href="userFAQ.html" target="_blank"><h3>회원정보 FAQ</h3></a>
+                </div>
+            </div><!-- // loginWrap -->
+        </form>
+    </div>
+</body>
+
+</html>

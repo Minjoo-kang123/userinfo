@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='c.css'>
+    <script src='main.js'></script>
+    <style>
+        .cen{
+            width:750px; 
+            height:40px; 
+            margin-top:20px;
+            padding: auto;
+            text-align: center;
+            background-color: rgb(205, 241, 255);
+        }
+
+    </style>
+</head>
+<body>
+    <div class = "header">
+        <table style="width: 500px; height: 50px; margin-left: 20px; margin-bottom: 20px; border: 1px black solid; text-align: center;">
+            <tr>
+                <td>
+                    <p><a href="userlogin.html"><p>로그인</p></a></p>
+                </td>
+                <td>
+                    <p><a href="userFAQ.html"><p>회원 FAQ</p></a></p>
+                </td>
+                <td>
+                    <p><a href="find_id.html"><p>아이디 찾기</p></a></p>
+                </td>
+                <td>
+                    <p><a href="find_pw.html"><p>비밀번호 찾기</p></a></p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="content" id="content">
+        <h2>아이디 찾기</h2>
+        <div class="conDiv">
+            <div class="grayBox3 mt35">개인회원/기업회원 아이디를 찾을 수 있는 서비스입니다.<br>아래에 정보를 입력하시면 가입 시 이메일로 정보를 알려드립니다.</div>
+                <div class="idSrchBox mt30">
+                    <form>
+                        <div class="left">
+                            <p class="tit">기업회원</p>
+                            <p class="inTxt1">
+                                <label for="userCom" class="dot">기업명</label>
+                                <input type="text" title="기업명" id="userCom" name="CUST_NM" class="txt" style="width:188px" maxlength="30">
+                            </p>
+                            <p class="inTxt2 mt5">
+                                <label for="userNum1" class="dot">사업자등록번호</label>
+                                <input type="text" title="사업자등록번호1" id="userNum1" class="txt" style="width:44px" maxlength="3"> -
+                                <input type="text" title="사업자등록번호2" id="userNum2" class="txt" style="width:40px" maxlength="2"> -
+                                <input type="text" title="사업자등록번호3" id="userNum3" class="txt" style="width:58px" maxlength="5">
+                            </p>
+                            <p class="inTxt2 mt5" id="pCustEmail" style="display:none;">
+                                <label for="custEmail" class="dot">이메일</label>
+                                <input type="text" title="이메일" id="custEmail" class="txt" style="width:188px" name="EMAIL" maxlength="80" emailkr="">
+                            </p>
+                            <p class="taR mt10"><a href="foundid.html" alt="확인"><img src="image/btn_confirm3.gif" alt="확인"></a></p>
+                        </div>
+                    </form>
+                    <form name="userfrm" action="" method="POST">                        
+                        <div class="right">
+                            <p class="tit">개인회원</p>
+                            <p class="inTxt1">
+                                <label for="userName" class="dot">이름</label>
+                                <input type="text" title="이름" id="userName" class="txt" style="width:188px" name="CUST_NM" maxlength="30">
+                            </p>
+                            <p class="inTxt2 mt5">
+                                <label for="userEmail" class="dot">이메일</label>
+                                <input type="text" title="이메일" id="userEmail" class="txt" style="width:188px" name="EMAIL" maxlength="80" emailkr="">
+                            </p>
+                            <p class="taR mt10"><a href="foundid.html"><img src="image/btn_confirm3.gif" alt="확인"></a></p>
+                        </div>
+                    </form>
+                    
+                </div><!-- joinType -->
+                <div class="cen">
+                    <a href="userFAQ.html" target="_blank"><h3>회원정보 FAQ</h3></a>
+                </div>
+            </div><!-- // conDiv -->
+        </div>
+    </div>
+</body>
+</html>
